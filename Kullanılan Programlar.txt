@@ -1,0 +1,3 @@
+Visual Studio Code - https://code.visualstudio.com/download
+HeidiSQL - https://www.heidisql.com/download.php 
+MySQL-Front - https://mysql-front.software.informer.com/download/
