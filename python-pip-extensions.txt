@@ -1,0 +1,10 @@
+python -m pip install beautifulsoup4
+python -m pip install pandas
+python -m pip install pymysql
+python -m pip install mysql-connector
+python -m pip install lxml
+python -m pip install tqdm
+python -m pip install sqlalchemy
+python -m pip install selenium
+python -m pip install webdriver_manager
+python -m pip install packaging
