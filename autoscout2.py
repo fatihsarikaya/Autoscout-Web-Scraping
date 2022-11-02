@@ -110,9 +110,6 @@ def fonksyion(i):
     driver = webdriver.Firefox(options=fireFoxOptions)
     
     
-    
-    
-    
 #    options = Options()
 #    options = webdriver.ChromeOptions()
     
