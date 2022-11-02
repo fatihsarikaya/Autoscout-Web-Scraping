@@ -97,7 +97,7 @@ for one_make in tqdm(car_base_make_data['car_make'], "Progress: "): # tqdm'i dö
     l=0
     
     
-    x = 1   # x = 4  yazılırsa eğer  ; ilk 3 arabanın marka-model linkleri db'e kayıt olunur. ( Audi, BMW ve Ford )
+    x = 230   # x = 4  yazılırsa eğer  ; ilk 3 arabanın marka-model linkleri db'e kayıt olunur. ( Audi, BMW ve Ford )
 
             # 229 marka araba var !!! ( x = 230 yazarak 229 marka aracın yani tüm araçların marka-model linklerini çekebiliriz )
     
