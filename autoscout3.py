@@ -764,7 +764,7 @@ def fonksyion(i):  # def fonksyion(x,y):
             
             #control = "true"
             
-            #i=0
+            
             lenght_of_chunk = len(chunk[0])
             #print("lenght_of_chunk:",lenght_of_chunk)     # 24  for -> number = np.arange(2,3) # https://www.autoscout24.com/offers/audi-100-coupe-s-restaurationsfahrzeug-motor-laeuft-gasoline-red-f45e40a9-a46c-4b05-8699-9979e2c680f6
             
