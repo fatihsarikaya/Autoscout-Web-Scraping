@@ -41,7 +41,7 @@ mydb = mysql.connector.connect(
 )
 mycursor = mydb.cursor()
 
-sql = "SELECT ad_link FROM adlinks_de_mileage_asc"
+sql = "SELECT ad_link FROM adlinks_de_mileage_desc"
 
 mycursor.execute(sql)
 
@@ -72,7 +72,7 @@ dataframe = pd.DataFrame(all_links, columns=['links'])
 
 
 x = 0
-y = 324460
+y = 5 #324460
 
 
 def fonksyion(i):  # def fonksyion(x,y):
@@ -421,7 +421,7 @@ def fonksyion(i):  # def fonksyion(x,y):
             
         ###############################################################  
         try:
-            Picture_count = ad_soup.find_all("div", { "class" : re.compile('image-gallery-slide')})[0]
+            Picture_count = ad_soup.find_all("div", { "class" : re.compile('image-gallery-slide')})[0] #
         except:
             Picture_count = ' '
 
@@ -635,6 +635,7 @@ def fonksyion(i):  # def fonksyion(x,y):
         # Create table as per requirement
 
         sql = """CREATE TABLE CARS(
+            
             brand VARCHAR(32),
             model VARCHAR(32),
             model_version VARCHAR(64),
@@ -674,7 +675,7 @@ def fonksyion(i):  # def fonksyion(x,y):
             emissions_sticker VARCHAR(16),
             last_service VARCHAR(16),
             last_timing_belt_change VARCHAR(16),
-            empty_weightVARCHAR(16),
+            empty_weight VARCHAR(16),
             colour_and_upholstery VARCHAR(64),
             all_equipment VARCHAR(2048),
             vehicle_description VARCHAR(4096),
