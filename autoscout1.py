@@ -97,7 +97,7 @@ for one_make in tqdm(car_base_make_data['car_make'], "Progress: "): # tqdm'i dö
     l=0
     
     
-    x = 4   # x = 4  yazılırsa eğer  ; ilk 3 arabanın marka-model linkleri db'e kayıt olunur. ( Audi, BMW ve Ford )
+    x = 1   # x = 4  yazılırsa eğer  ; ilk 3 arabanın marka-model linkleri db'e kayıt olunur. ( Audi, BMW ve Ford )
 
             # 229 marka araba var !!! ( x = 230 yazarak 229 marka aracın yani tüm araçların marka-model linklerini çekebiliriz )
     
@@ -215,6 +215,7 @@ cursor = scrap_db.cursor()
 
 sql = """CREATE TABLE carlist_de_mileage_desc(
         
+        id tinyint(3),
         brand VARCHAR(32),
         brand_id VARCHAR(16),
         model VARCHAR(32),
@@ -234,6 +235,7 @@ for row_count in range(0, 1):
         #print(chunk[0])
         #print("-------------------------------------------------------")
         
+        id = 0
         brand = ""
         brand_id = ""
         model = ""
@@ -250,6 +252,8 @@ for row_count in range(0, 1):
         len_for_links = len(car_data_base.link)
         
         for l in range(len_for_links):
+            
+            id +=1
                         
             if "car_make" in car_data_base: 
                 try:
@@ -287,9 +291,10 @@ for row_count in range(0, 1):
                     created_at = car_data_base.download_date_time[l]
                 except:
                     created_at = ""
+            
         
-            mySql_insert_query = "INSERT INTO carlist_de_mileage_desc (brand,brand_id,model,model_id,link,created_at,updated_at,status) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
-            val =                                                     (brand,brand_id,model,model_id,link,created_at,updated_at,status)
+            mySql_insert_query = "INSERT INTO carlist_de_mileage_desc (id,brand,brand_id,model,model_id,link,created_at,updated_at,status) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+            val =                                                     (id,brand,brand_id,model,model_id,link,created_at,updated_at,status)
 
             #cursor = scrap_db.cursor()
             cursor.execute(mySql_insert_query, val) # cursor.executemany(mySql_insert_query, tuple_of_tuples)
@@ -299,4 +304,5 @@ for row_count in range(0, 1):
 
             #Disconnect from server
             #scrap_db.close()
+        
 
