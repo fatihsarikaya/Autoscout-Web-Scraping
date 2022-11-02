@@ -27,24 +27,23 @@ from random import randrange
 from tqdm import tqdm #progress bar
 from selenium.webdriver.firefox.options import Options
 
-fireFoxOptions = Options()
-fireFoxOptions.binary_location = r'C:\Program Files\Firefox Developer Edition\firefox.exe'  
-fireFoxOptions.add_argument("--headless") 
-#fireFoxOptions.add_argument("--window-size=1920,1080")
-#fireFoxOptions.add_argument('--start-maximized')
-fireFoxOptions.add_argument('--disable-gpu')
-fireFoxOptions.add_argument('--no-sandbox')
+#fireFoxOptions = Options()
+#fireFoxOptions.binary_location = r'C:\Program Files\Firefox Developer Edition\firefox.exe'   # PC"ye Firefox Developer yüklenmelidir.
+#fireFoxOptions.add_argument("--headless") 
+##fireFoxOptions.add_argument("--window-size=1920,1080")
+##fireFoxOptions.add_argument('--start-maximized')
+#fireFoxOptions.add_argument('--disable-gpu')
+#fireFoxOptions.add_argument('--no-sandbox')
 
-driver = webdriver.Firefox(options=fireFoxOptions)
+#driver = webdriver.Firefox(options=fireFoxOptions)
 
 
-#options = webdriver.ChromeOptions()
+options = webdriver.ChromeOptions()
 prefs = {"profile.managed_default_content_settings.images": 2}
-#options.add_experimental_option("prefs", prefs)
-
-#service = Service(executable_path='C:/Users/Fatih/Desktop/autoscout24/chromedriver.exe')
-#driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-#driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+options.add_experimental_option("prefs", prefs)
+service = Service(executable_path='C:/Users/Fatih/Desktop/autoscout24/chromedriver.exe')
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
 starting_link_to_scrape = "https://www.autoscout24.com/?genlnk=navi&genlnkorigin=com-all-all-home"
 driver.get(starting_link_to_scrape)
@@ -96,6 +95,7 @@ for one_make in tqdm(car_base_make_data['car_make'], "Progress: "): # tqdm'i dö
     print(" len_car_base_make_data:",len_car_base_make_data)
     
     l=0
+    
     
     x = 4   # x = 4  yazılırsa eğer  ; ilk 3 arabanın marka-model linkleri db'e kayıt olunur. ( Audi, BMW ve Ford )
 
@@ -289,7 +289,7 @@ for row_count in range(0, 1):
                     created_at = ""
         
             mySql_insert_query = "INSERT INTO carlist_de_mileage_desc (brand,brand_id,model,model_id,link,created_at,updated_at,status) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
-            val = (brand,brand_id,model,model_id,link,created_at,updated_at,status)
+            val =                                                     (brand,brand_id,model,model_id,link,created_at,updated_at,status)
 
             #cursor = scrap_db.cursor()
             cursor.execute(mySql_insert_query, val) # cursor.executemany(mySql_insert_query, tuple_of_tuples)
