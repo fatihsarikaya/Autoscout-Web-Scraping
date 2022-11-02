@@ -162,8 +162,6 @@ def fonksyion(i):  # def fonksyion(x,y):
             price = ' '
 
 
-
-
         try: 
             dealer = ad_soup.find("div", { "class" : re.compile('CommonComponents_nameContainer__3Z_zp')}).get_text()
         except:
