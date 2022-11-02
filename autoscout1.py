@@ -215,7 +215,7 @@ cursor = scrap_db.cursor()
 
 sql = """CREATE TABLE carlist_de_mileage_desc(
         
-        id tinyint(3),
+        id int(11),
         brand VARCHAR(32),
         brand_id VARCHAR(16),
         model VARCHAR(32),
