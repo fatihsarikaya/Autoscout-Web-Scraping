@@ -284,6 +284,7 @@ def fonksyion(i):
 
     sql = """CREATE TABLE adlinks_de_mileage_desc(
         
+        id int(11),
         count int(11),
         carlist_id int(11),
         brand_model VARCHAR(32),  
@@ -309,6 +310,7 @@ def fonksyion(i):
         #print(chunk[0])
         #print("-------------------------------------------------------")
         
+        id = 0
         count = ""
         carlist_id = ""
         brand_model = ""
@@ -333,6 +335,8 @@ def fonksyion(i):
         links_on_one_page_df = links_on_one_page_df.replace(np.nan, "")
         
         for l in range(len_for_ad_link):
+            
+            id +=1
             
             try:
                 count = l + 1
@@ -381,8 +385,8 @@ def fonksyion(i):
 
 
             if control == "true":
-                mySql_insert_query = "INSERT INTO adlinks_de_mileage_desc (count,carlist_id,brand_model,ad_link,link,created_at,updated_at,status) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
-                val =                                                    (count,carlist_id,brand_model,ad_link,link,created_at,updated_at,status)
+                mySql_insert_query = "INSERT INTO adlinks_de_mileage_desc (id,count,carlist_id,brand_model,ad_link,link,created_at,updated_at,status) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+                val =                                                     (id,count,carlist_id,brand_model,ad_link,link,created_at,updated_at,status)
 
                 #cursor = scrap_db.cursor()
                 cursor.execute(mySql_insert_query, val) # cursor.executemany(mySql_insert_query, tuple_of_tuples)
