@@ -86,7 +86,6 @@ print(dataframe.link[x:y])
 
 
 def fonksyion(i):
-
     global x
     global y
 
