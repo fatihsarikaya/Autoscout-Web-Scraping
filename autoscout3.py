@@ -114,7 +114,7 @@ def fonksyion(i):  # def fonksyion(x,y):
 
         #start a driver
 
-#        service = Service(executable_path='C:/Users/Fatih/Desktop/autoscout24/chromedriver.exe')
+#        service = Service(executable_path = r'C:\Users\Fatih\Desktop\mobile-de\chromedriver.exe')
 #        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
         #Go to webpage and scrape data
