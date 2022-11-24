@@ -8,4 +8,3 @@ python -m pip install sqlalchemy
 python -m pip install selenium
 python -m pip install webdriver_manager
 python -m pip install packaging
-python -m pip install pymysql
