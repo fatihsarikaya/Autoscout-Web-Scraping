@@ -41,7 +41,7 @@ from selenium.webdriver.firefox.options import Options
 options = webdriver.ChromeOptions()
 prefs = {"profile.managed_default_content_settings.images": 2}
 options.add_experimental_option("prefs", prefs)
-service = Service(executable_path='C:/Users/Fatih/Desktop/autoscout24/chromedriver.exe')
+service = Service(executable_path = r'C:\Users\Fatih\Desktop\mobile-de\chromedriver.exe')
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
@@ -97,9 +97,9 @@ for one_make in tqdm(car_base_make_data['car_make'], "Progress: "): # tqdm'i dö
     l=0
     
     
-    x = 230   # x = 4  yazılırsa eğer  ; ilk 3 arabanın marka-model linkleri db'e kayıt olunur. ( Audi, BMW ve Ford )
+    x = 233   # x = 4  yazılırsa eğer  ; ilk 3 arabanın marka-model linkleri db'e kayıt olunur. ( Audi, BMW ve Ford )
 
-            # 229 marka araba var !!! ( x = 230 yazarak 229 marka aracın yani tüm araçların marka-model linklerini çekebiliriz )
+            # 232 marka araba var !!! ( x = 233 yazarak 232 marka aracın yani tüm araçların marka-model linklerini çekebiliriz )
     
     while l < x:  
         l += 1;
