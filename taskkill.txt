@@ -1,0 +1,2 @@
+taskkill /IM firefox.exe /F
+taskkill /IM python.exe /F
