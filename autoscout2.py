@@ -86,6 +86,7 @@ print(dataframe.link[x:y])
 
 
 def fonksyion(i):
+
     global x
     global y
 
@@ -126,7 +127,7 @@ def fonksyion(i):
     
 
     #start a driver
-    #service = Service(executable_path = r'C:\Users\Fatih\Desktop\mobile-de\chromedriver.exe')
+    #service = Service(executable_path='C:/Users/Fatih/Desktop/autoscout24/chromedriver.exe')
 #    driver = webdriver.Chrome(options=options)
 #    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
@@ -173,7 +174,7 @@ def fonksyion(i):
 #        options.add_experimental_option("prefs", prefs)
 
         #start a driver
-        #service = Service(executable_path = r'C:\Users\Fatih\Desktop\mobile-de\chromedriver.exe')
+        #service = Service(executable_path='C:/Users/Fatih/Desktop/autoscout24/chromedriver.exe')
 #        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
         
         # Sırayla sayfalara (1 den 20 ye) gitmemiz gerekiyor !!!  # 
@@ -314,7 +315,7 @@ def fonksyion(i):
         link = ""
         created_at = ""
         updated_at = ""
-        status = ""
+        status = 1
         
         
         control = "true"
